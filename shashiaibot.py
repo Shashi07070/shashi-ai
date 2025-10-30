@@ -6,8 +6,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 
 # --- 1. CONFIGURATION ---
 # Keys hum Render ke Secrets se lenge
-TELEGRAM_TOKEN = os.environ.get('8364888808:AAG9CqmbU4eVUefCqYkurHrFK1IfWaCNYuY')
-GOOGLE_API_KEY = os.environ.get('AIzaSyAAdhqIWdxl6hyo0V1Mi24hXGwulfKbvRQ')
+TELEGRAM_TOKEN = os.environ.get('8485294249:AAFH6q0pgd-eiq3VlLNoZOLp-ZMI6jzR1rY')
+GOOGLE_API_KEY = os.environ.get('AIzaSyAIku186imbGT7S0isonSDDqxwn7lglPnM')
 
 # Google AI ko setup karein
 try:
