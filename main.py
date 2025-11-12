@@ -1,17 +1,18 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ChatMemberHandler
 
-BOT_TOKEN = "7657065191:AAEFB43BvFDJNjkvUkq6aT_BsUF-4c1Q9NQ"  # Replace with your BotFather token
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_DEFAULT_TOKEN_IF_NEEDED")  # Read token from Render env variable!
 
 WELCOME_MESSAGE = """👋 Welcome {mention} to **THE FOOTBALL ANALYST** ⚽
 The Asli Baap of the Market 🔥
 Stay active & enjoy the winning market 💰
 """
 
-def new_member(update: Update, context):
+async def new_member(update: Update, context):
     # This event triggers whenever a new user joins
     for member in update.chat_member.new_chat_members:
-        mention = f"[{member.first_name}](tg://user?id={member.id})"
+        mention = f"[{member.first_name}](tg://user?id={{member.id}})"
         await context.bot.send_message(
             chat_id=update.chat_member.chat.id,
             text=WELCOME_MESSAGE.format(mention=mention),
